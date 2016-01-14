@@ -1,0 +1,41 @@
+January 14, 2016
+David Yan, Srikar Pyda, 
+
+Readability
+What pieces of code help versus obscure your understanding of the algorithm?
+
+Within Bins.java, the method readData takes in one input, a scanner, which populates a list of all integers in scanner input and returns the list. This method is short and very easy to read understand.
+Within Disk.java, simple methods written into the Disk.java class such as equals and compareTo are also very short and simple to understand.
+
+What comments might be helpful within the code?
+To prevent user confusion in the Bins.java main class, because this class contains a lot of complex code, comments should be added to aid the user as a guide through this code regardless of familiarity.
+
+Are there places where the code could be more concise and also more clear?
+Users begin processing code in the main class, which is why it is important for the main class to always be clear, especially in programs containing a lot of complex code. Having a short, yet well explained main methods allows the users to properly dissect the program from top down, hopefully utilizing a variety of helper functions in order to guide them throughout the way. The main method should contain comments to help the user peruse through the helper functions.
+
+Testability
+How would you test this code for bugs?
+Create many sample cases and test whether every helper function is able to generate the correct outputs for the given parameters, assuming the parameters are varied between different cases, which prove the program could have a pitfall.
+Give a specific example of a "test case" as the code is currently written.
+For the readData method in Bins.java, one helpful test case could be to test whether the method could properly evaluate a variety of integers, doubles, and other types. This is a good test case because it determines whether the hasNext and nextInt methods used within this method allow us to return a list containing all unique integers in the scanner.
+What additional functions may be helpful?
+PriorityQueue functions should be separated from the main class.
+A helper function that takes in a priority que pq of Disks, each of which contain an integer myID, an integer mySize, an integer myCapacity, and a list of integers myFiles, and returns an integer total which returns the total size of a disk.
+
+Give a specific example of a "test case" for your new function.
+We could use the same test case described before to test this new function.
+
+Extensibility
+What Code Smells can you find?
+Bloater - Bins.java has an unnecessarily large and complex main method.
+Dispensable - There are a lot of print statements that should only be used for testing but is ultimately dispensable.
+
+What suggestions does this code make about how someone would extend it in the future to compare the performance of a wider variety of fitting algorithms?
+From a high level perspective, making your main method as clear as possible, and not cluttering it with a variety of integers and functions. The main method should provide an easy method for users to test the program in order to ensure the highest rate of verifiability. Regardless of technical proficiency right now, programs can be improved as best as possible by having a high rate of verifiability.
+
+What dependencies are there between different parts of the code?
+Everything is dependent on the main method and no helper methods contained in the main method.
+How easy to find are those dependencies?
+By seeing how complex the main method is. If the main method is complex, it signals lack of helper function use.
+Can you clarify or remove those dependencies?
+We can remove these dependencies by creating more helper functions to be used in the main method.
